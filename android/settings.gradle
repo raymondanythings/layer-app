@@ -37,7 +37,7 @@ if (getRNMinorVersion() >= 75) {
   }
 }
 
-rootProject.name = 'layer-app'
+rootProject.name = 'layer'
 
 dependencyResolutionManagement {
   versionCatalogs {
