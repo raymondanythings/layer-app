@@ -15,6 +15,9 @@ export default function LayerApp() {
         flex: 1,
         paddingBottom: insets.bottom,
       }}
+      contentInsetAdjustmentBehavior="never"
+      scrollEnabled
+      bounces={false}
       source={{
         uri: "https://stg.layerapp.io/",
       }}

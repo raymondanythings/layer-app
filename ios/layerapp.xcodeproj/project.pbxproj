@@ -335,6 +335,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = layerapp/layerapp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3XU5VHUK72;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -377,6 +378,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = layerapp/layerapp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3XU5VHUK72;
 				INFOPLIST_FILE = layerapp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Layer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
