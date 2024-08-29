@@ -4,29 +4,27 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+import { SplashScreen } from "@/components/splash";
+import { useFonts } from "expo-font";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-
-  useEffect(() => {
-    setTimeout(() => {
-      SplashScreen.hideAsync();
-    }, 3000);
-  }, []);
+  const [loaded, error] = useFonts({
+    helvetica: require("@/assets/fonts/Helvetica.ttf"),
+    helveticaUltra: require("@/assets/fonts/Helvetica-Ultra.ttf"),
+  });
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-      </Stack>
+      <SplashScreen isLoaded={loaded}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="index" />
+        </Stack>
+      </SplashScreen>
     </ThemeProvider>
   );
 }

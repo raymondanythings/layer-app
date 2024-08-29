@@ -9,4 +9,12 @@ export default ({ config }: ConfigContext): ConfigContext["config"] => ({
       usesNonExemptEncryption: false,
     },
   },
+  plugins: [
+    [
+      "expo-font",
+      {
+        fonts: ["@/assets/fonts/Helvetica.ttf"],
+      },
+    ],
+  ],
 });

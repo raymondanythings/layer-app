@@ -114,8 +114,8 @@ android {
         applicationId 'com.teamkasukabe.layer'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 3
+        versionName "1.0.2"
     }
     signingConfigs {
         debug {
@@ -127,12 +127,16 @@ android {
     }
     signingConfigs {
         release {
-            if (project.hasProperty('RELEASE_STORE_FILE')) {
-                storeFile file(RELEASE_STORE_FILE)
-                storePassword RELEASE_STORE_PASSWORD
-                keyAlias RELEASE_KEY_ALIAS
-                keyPassword RELEASE_KEY_PASSWORD
-            }
+            storeFile file('my-upload-key.keystore')
+            storePassword '123123'
+            keyPassword '123123'
+            keyAlias 'my-key-alias'
+            // if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+            //     storeFile file(MYAPP_UPLOAD_STORE_FILE)
+            //     storePassword MYAPP_UPLOAD_STORE_PASSWORD
+            //     keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            //     keyAlias MYAPP_UPLOAD_KEY_ALIAS
+            // }
         }
     }
 
@@ -143,6 +147,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
+            // signingConfig signingConfigs.release
             signingConfig signingConfigs.release
             shrinkResources (findProperty('android.enableShrinkResourcesInReleaseBuilds')?.toBoolean() ?: false)
             minifyEnabled enableProguardInReleaseBuilds
